@@ -1,0 +1,5 @@
+package com.songsite.repository;
+
+public interface FreeBoardAnswerRepository {
+
+}

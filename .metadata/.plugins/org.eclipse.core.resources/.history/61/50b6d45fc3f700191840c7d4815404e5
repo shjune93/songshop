@@ -1,0 +1,5 @@
+package com.songsite.domain;
+
+public class AbstarctEntity {
+
+}

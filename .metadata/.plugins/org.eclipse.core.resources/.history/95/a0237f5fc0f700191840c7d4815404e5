@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- header 파일  -->
+{{> /include/header}}
+</head>
+<body>
+	<!-- 페이지 공통 메뉴 파일  -->
+	{{> /include/navigation}}
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+			<!-- 왼쪽에 공통으로 들어가는 메뉴 -->
+			{{> /include/menuAccount}}
+			<div class="col-md-9 table-responsive">
+				<h3>
+					<strong>회원 리스트</strong>
+				</h3>
+				<br>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>이름</th>
+							<th>이메일</th>
+							<th>권한</th>
+							<th>성별</th>
+							<th>가입 타입</th>
+							<th>가입일자</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#account}}
+						<tr>
+							<th scope="row">{{id}}</th>
+							<td>{{name}}</td>
+							<td>{{email}}</td>
+							<td>{{authority}}</td>
+							<td>{{gender}}</td>
+							<td>{{loginType}}</td>
+							<td>{{createDate}}</td>
+						</tr>
+						{{/account}}
+						<!-- 회원 수정 기능 -->
+						<!-- <td><a href="#" class="btn btn-success" role="button">수정</a></td> -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+	<!-- JS 관련 파일  -->
+	{{> /include/footer}}
+</body>
+</html>

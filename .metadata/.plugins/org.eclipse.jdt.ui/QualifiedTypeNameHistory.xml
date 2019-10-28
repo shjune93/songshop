@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.domain.EntityScan"/>
+<fullyQualifiedTypeName name="com.songsite.enums.Authority"/>
+<fullyQualifiedTypeName name="com.songsite.enums.Gender"/>
+<fullyQualifiedTypeName name="com.songsite.enums.LoginType"/>
+<fullyQualifiedTypeName name="com.songsite.repository.AccountRepository"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+</qualifiedTypeNameHistroy>

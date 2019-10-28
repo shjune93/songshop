@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- header 파일  -->
+{{> /include/header}}
+<!-- /header 파일  -->
+</head>
+<body>
+	<!-- 페이지 공통 메뉴 파일  -->
+	{{> /include/navigation}}
+	<!-- Page Content -->
+	<div class="container">
+		<div class="row">
+			<!-- 왼쪽에 공통으로 들어가는 메뉴 -->
+			{{> /include/menuCategory}}
+			<!-- 상품 자세히 -->
+			<div class="col-md-9">
+				{{#product}}
+				<div class="thumbnail">
+					<div class="caption-full">
+						<strong class="h1">{{title}}</strong>
+						{{#sessionedManager}}
+						<a href="/product/delete/{{number}}" class="btn btn-link pull-right">삭제</a>
+						<a href="/product/update/{{number}}" class="btn btn-link pull-right">수정</a>
+						{{/sessionedManager}}
+						<!--
+						 댓글 카운트
+						 <p class="ratings pull-right">3 reviews</p> 
+						 -->
+					</div>
+					<div class="caption-full">
+						<p>{{{contents}}}</p>
+						<h4 class="pull-right">{{price}}원</h4>
+						<a href="/order/{{number}}" class="btn btn-primary">구입</a>
+					</div>
+				</div>
+				<div class="well">
+					<form class="answer-write" action="/product/{{number}}/comment">
+						<!-- 비 로그인 -->
+						{{^sessionedAccount}}
+						<div class="alert alert-info" role="alert">
+							<a href="/login?uri=product/{{number}}">로그인 후 댓글을 입력할수 있습니다.</a>
+						</div>
+						{{/sessionedAccount}}
+						<!-- / 비 로그인-->
+						<!-- 로그인 -->
+						{{#sessionedAccount}}
+						<div class="form-group">
+							<textarea class="form-control" placeholder="댓글 입력..." name="contents"></textarea>
+						</div>
+						<input type="submit" class="btn btn-success" value="댓글 입력" />
+						{{/sessionedAccount}}
+						<!-- / 로그인 -->
+					</form>
+					<hr>
+					{{#comments}}
+					<div class="row">
+						<div class="col-md-12">
+							<a>{{account.id}}</a>
+							<span class="pull-right text-muted small">{{createDate}}</span>
+							<p>{{contents}}</p>
+							<form action="/product/{{product.number}}/{{number}}/comment" method="post">
+								<input type="submit" class="btn btn-link pull-right" value="삭제" />
+							</form>
+						</div>
+					</div>
+					<hr>
+					{{/comments}}
+				</div>
+				{{/product}}
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+	<!-- JS 관련 파일  -->
+	{{> /include/footer}}
+</body>
+</html>
