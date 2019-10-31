@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 import com.songsite.enums.Authority;
@@ -65,9 +66,12 @@ public class Customer extends AbstractEntity {
 
 	// sns 가입 할경우 아이디,이름 저장
 	public Customer(String userId, String name, LoginType loginType) {
+		
 		this.userId = userId;
 		this.name = name;
 		this.loginType = loginType;
+		this.setFormattedCreateDate();
+		
 	}
 
 	// 회원 가입
@@ -77,6 +81,8 @@ public class Customer extends AbstractEntity {
 		this.password = newCustomer.password;
 		this.name = newCustomer.name;
 		this.email=newCustomer.email;
+		this.setFormattedCreateDate();
+		
 	}
 
 }

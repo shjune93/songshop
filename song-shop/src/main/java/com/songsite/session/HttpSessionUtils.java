@@ -31,5 +31,17 @@ public class HttpSessionUtils {
 			session.setAttribute(HttpSessionUtils.MANAGER_SESSION_KEY, "OK");
 		}
 	}
+	
+	
+	public static boolean isLoginUser(HttpSession session) {
+		Object sessionedUser=session.getAttribute(CUSTOMER_SESSION_KEY);
+		if(sessionedUser==null) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+	
 
 }

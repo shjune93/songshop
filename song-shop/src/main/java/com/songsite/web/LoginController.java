@@ -55,22 +55,6 @@ public class LoginController {
 		// 비밀번호가 틀릴경우
 		return "/login/login";
 		
-//		User user=userRepository.findByUserId(userId);
-//		if (user == null) {
-//			System.out.println("Login Failue!");
-//			return "redirect:/users/loginForm";
-//			
-//		}
-//		if(!user.matchPassword(password)) {
-//
-//			System.out.println("Login Failue!");
-//			return "redirect:/users/loginForm";
-//		}
-//		
-//		System.out.println("Login Success!");
-//		session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, user);
-//		
-//		return "redirect:/";
 	}
 
 	// #로그아웃

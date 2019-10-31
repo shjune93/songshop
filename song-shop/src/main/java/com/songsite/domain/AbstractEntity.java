@@ -3,24 +3,32 @@ package com.songsite.domain;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.persistence.Convert;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.omg.CORBA.Current;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import com.songsite.LocalDateTimeConverter;
 
 import lombok.Getter;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@Getter
 public class AbstractEntity {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	
+	public Long getId() {
+		return id;
+	}
 	
 	//아이디 일치여부확인
 		public boolean matchId(Long newId) {
@@ -38,6 +46,13 @@ public class AbstractEntity {
 	@LastModifiedDate // 데이터가 수정된 시간
 	private LocalDateTime modifiedDate;
 
+	
+	public void setFormattedCreateDate() {
+		createDate=LocalDateTime.now();
+	}
+	public void setFormattedModifiedDate() {
+		modifiedDate=LocalDateTime.now();
+	}
 	//시간
 	public String getFormattedCreateDate() {
 		if(createDate==null) {

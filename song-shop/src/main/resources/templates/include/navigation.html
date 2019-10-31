@@ -26,8 +26,8 @@
 				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
 						class="glyphicon glyphicon-bell"></i></a>
 					<ul class="dropdown-menu">
-						<li><a href="/freeboard" target="_blank">SLiPP</a></li>
-						<li><a href="/freeboard" target="_blank">Facebook</a></li>
+						<li><a href="/freeboard/form" target="_blank">SLiPP</a></li>
+						<li><a href="/freeboard/lsit" target="_blank">Facebook</a></li>
 					</ul></li>
 				<li><a href="/users"><i class="glyphicon glyphicon-user"></i></a></li>
 			</ul>
@@ -48,10 +48,10 @@
 				<li><a href="/users/loginForm" role="button">blog</a></li>
 				<li><a href="/users/loginForm" role="button">자유게시판</a></li>
 				{{^sessionedCUSTOMER}}
-				<li><a href="/login" role="button">로그인</a></li>
+				<li><a href="login/form" role="button">로그인</a></li>
 				{{/sessionedCUSTOMER}}
 				{{#sessionedCUSTOMER}}
-				<li><a href="/users/logout" role="button">로그아웃</a></li>
+				<li><a href="logout" role="button">로그아웃</a></li>
 				<li><a href="/users/{{id}}/form" role="button">개인정보수정</a></li>
 				{{/sessionedCUSTOMER}}
 			</ul>
@@ -89,19 +89,22 @@
 				<i class="glyphicon glyphicon-bell"></i>
 				</a>
 					<ul class="dropdown-menu">
-						<li><a href="/freeboard" target="_blank">SLiPP</a></li>
-						<li><a href="/freeboard" target="_blank">Facebook</a></li>
+						<li><a href="/freeboard/form" >SLiPP</a></li>
+						<li><a href="/freeboard/list" target="_blank">Facebook</a></li>
+						<!-- target="_blank" 새창에서 이동 -->
 					</ul>
 				</li>
-				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				<i class="glyphicon glyphicon-user"></i></a>
+				<li>
+				<a class="dropdown-toggle" data-toggle="dropdown">
+				<i class="glyphicon glyphicon-user"></i>
+				</a>
 				<ul class="dropdown-menu">
 					{{^sessionedCUSTOMER}}
-						<li><a href="/login" target="_blank">로그인</a></li>
+						<li><a href="login">로그인</a></li>
 					{{/sessionedCUSTOMER}}
 					{{#sessionedCUSTOMER}}
-						<li><a href="#" target="_blank">개인정보수정</a></li>
-						<li><a href="/logout" target="_blank">로그아웃</a></li>
+						<li><a href="#">개인정보수정</a></li>
+						<li><a href="logout">로그아웃</a></li>
 					{{/sessionedCUSTOMER}}
 					</ul>
 					

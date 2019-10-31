@@ -5,11 +5,13 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.persistence.JoinColumn;
 
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 
 
@@ -47,16 +49,33 @@ public class FreeBoard extends AbstractEntity{
 	@OrderBy("id DESC")
 	private List<FreeBoardAnswer> answers;
 	
-	@OneToMany(mappedBy="filename")
-	private List<FreeBoardFile> files;
+//	@OneToMany(mappedBy="freeboard")
+//	@OrderBy("id DESC")
+//	private List<FreeBoardFile> files;
+	
+	@OneToOne(mappedBy="freeboard")
+	@OrderBy("id DESC")
+	private FreeBoardFile file;
 	
 	public FreeBoard() {}
+	
+	public FreeBoard(Customer writer, String title, String contents,FreeBoardFile file) {
+		
+		this.writer = writer;
+		this.title = title;
+		this.contents = contents;
+		this.file=file;
+		this.setFormattedCreateDate();
+	
+	}
 	
 	public FreeBoard(Customer writer, String title, String contents) {
 		
 		this.writer = writer;
 		this.title = title;
 		this.contents = contents;
+	
+		this.setFormattedCreateDate();
 	
 	}
 	
@@ -65,6 +84,7 @@ public class FreeBoard extends AbstractEntity{
 	public void update(String title,String contents) {
 		this.title=title;
 		this.contents=contents;
+		this.setFormattedModifiedDate();
 		
 	}
 
