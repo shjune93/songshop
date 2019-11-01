@@ -72,7 +72,7 @@ public class FreeBoardContoller {
 				
 				
 				String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                        .path("/downloadFile/")	
+                        .path("/freeboard/downloadFile/")	
                         .path(i+"/")
                         .path(fileName)
                         .toUriString();
@@ -83,41 +83,45 @@ public class FreeBoardContoller {
 		        
 		    	
 			}
-	    	return "/freeboard/list";
+	    	return "redirect:/freeboard/list";
 	    }
 	   	/////////////////////////////////////////////////////////////////////////// 파일업로드 원본
-	    @PostMapping("{id}/uploadFile")
-	    public FreeBoardFile uploadFile(@RequestParam("file") MultipartFile file,@PathVariable Long id) {
-	    	String i="";
-	        String fileName = service.storeFile(file,i);
-	        
-	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-	                                .path("/downloadFile/")
-	                                .path(fileName)
-	                                .toUriString();
-	        
-	        return new FreeBoardFile(fileName, fileDownloadUri, file.getContentType(), file.getSize());
-	    }
+//	    @PostMapping("{id}/uploadFile")
+//	    public FreeBoardFile uploadFile(@RequestParam("file") MultipartFile file,@PathVariable Long id) {
+//	    	String i="";
+//	        String fileName = service.storeFile(file,i);
+//	        
+//	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+//	                                .path("/downloadFile/")
+//	                                .path(fileName)
+//	                                .toUriString();
+//	        
+//	        return new FreeBoardFile(fileName, fileDownloadUri, file.getContentType(), file.getSize());
+//	    }
 	    
 	    ///////////////////////////////////////////////////////////////////////////////////////////////
 	    
-	    @PostMapping("{id}/uploadMultipleFiles")
-	    public List<FreeBoardFile> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files,@PathVariable Long id){
-	        return Arrays.asList(files)
-	                .stream()
-	                .map(file -> uploadFile(file,id))
-	                .collect(Collectors.toList());
-	    }
-	    
-	    @GetMapping("{id}/downloadFile/{fileName:.+}")
-	    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request){
+//	    @PostMapping("{id}/uploadMultipleFiles")
+//	    public List<FreeBoardFile> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files,@PathVariable Long id){
+//	        return Arrays.asList(files)
+//	                .stream()
+//	                .map(file -> uploadFile(file,id))
+//	                .collect(Collectors.toList());
+//	    }
+	    //파일 다운로드
+	    @GetMapping("downloadFile/{id}/{fileName:.+}")
+	    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName,@PathVariable String id, HttpServletRequest request){
 	         // Load file as Resource
-	        Resource resource = service.loadFileAsResource(fileName);
+	    	//System.out.println(fileName);
+	    	Resource resource = service.loadFileAsResource(id+"/"+fileName);
+	    	//System.out.println(resource.getFilename());
+	       
 	 
 	        // Try to determine file's content type
 	        String contentType = null;
 	        try {
 	            contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+	           // System.out.println(contentType);
 	        } catch (IOException ex) {
 	            logger.info("Could not determine file type.");
 	        }
@@ -134,7 +138,7 @@ public class FreeBoardContoller {
 	    }
 	    
 		// #로그인 확인후 게시판 적기 이동
-		@GetMapping("/form")
+		@GetMapping("form")
 		public String loginForm(HttpSession session, HttpServletRequest request) {
 			if (session.getAttribute(HttpSessionUtils.CUSTOMER_SESSION_KEY) == null) {
 				// 이미 로그인 상태일 경우
@@ -143,10 +147,17 @@ public class FreeBoardContoller {
 			return "/freeboard/form";
 		}
 		
-		@GetMapping("/list")
+		@GetMapping("list")
 		public String list(HttpSession session, HttpServletRequest request,Model model) {
 			model.addAttribute("freeboards",freeBoardRepository.findAll());
 			return "/freeboard/list";
+		}
+		
+		@GetMapping("{id}")
+		public String show(@PathVariable Long id,Model model) {
+			FreeBoard freeboard=freeBoardRepository.findById(id).get();
+			model.addAttribute("freeboard",freeboard);
+			return "/freeboard/show";
 		}
 		
 }

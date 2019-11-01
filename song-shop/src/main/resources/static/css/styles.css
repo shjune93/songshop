@@ -141,7 +141,7 @@ h3,h4,h5 {
 .article-util-list a:hover,.article-util-list button:hover{text-decoration:none;background-color:#dadada}
 .article-util-list{margin:0;padding:0;list-style:none;color:#999;}
 .article-util-list li{display:inline-block;}
-.article-util-list li:before{content:'•';margin:0 -.4em}
+.article-util-list li:before{content:'|';margin:0 -.4em}
 .article-util-list li:first-child:before{display:none}
 .article-util-list .btn-like-article{color:#44ca7f;}
 .article-util-list .btn-like-article:hover{background-color:#e3f7ec}
@@ -201,3 +201,5 @@ h3,h4,h5 {
     padding-right: 2.5em;
 }
 
+
+}
