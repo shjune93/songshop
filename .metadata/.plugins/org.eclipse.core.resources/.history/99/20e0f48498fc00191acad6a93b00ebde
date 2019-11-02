@@ -1,0 +1,43 @@
+package com.songsite.message;
+
+// 상태 메시지를 model에 담거나 json으로 만들때 사용.
+public class Result {
+
+	public static final String MESSAGE_KEY = "detailMessage";
+	private boolean valid; // ok, error
+	private String detailMessage;
+
+	private Result(boolean valid) {
+		this.valid=valid;
+	}
+	
+	private Result(boolean valid,String errorMessage) {
+		this.valid=valid;
+		this.errorMessage=errorMessage;
+	}
+	public Result(Boolean state, String detailMessage) {
+		this.state = state;
+		this.detailMessage = detailMessage;
+	}
+
+	public Boolean getState() {
+		return state;
+	}
+	
+	public static Result ok() {
+		return new Result(true);
+	}
+	
+	public static Result fail(String errorMessage) {
+		return new Result(false,errorMessage);
+	}
+
+	public String getDetailMessage() {
+		return detailMessage;
+	}
+
+	@Override
+	public String toString() {
+		return detailMessage;
+	}
+}

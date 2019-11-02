@@ -15,9 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.songsite.domain.Customer;
+import com.songsite.domain.User;
 import com.songsite.enums.LoginType;
-import com.songsite.repository.CustomerRepository;
+import com.songsite.repository.UserRepository;
 import com.songsite.session.HttpSessionUtils;
 
 import lombok.extern.slf4j.Slf4j;
@@ -38,7 +38,7 @@ public class NaverLoginController {
 	private final String RedirectURI = "/redirectnaver";
 
 	@Autowired
-	private CustomerRepository CustomerRepository;
+	private UserRepository CustomerRepository;
 
 	// 사용자 토큰 요청할 URL [수정 X ]
 	private final String tokenURL = "https://nid.naver.com/oauth2.0/token?"
@@ -66,10 +66,10 @@ public class NaverLoginController {
 		log.info("\n[네이버 응답 데이터 : {}]", naverEntity.getBody().getResponse());
 
 		
-		Customer newCustomer = new  Customer(naverEntity.getBody().getResponse().getEnc_id(), naverEntity.getBody().getResponse().getNickname(),
+		User newCustomer = new  User(naverEntity.getBody().getResponse().getEnc_id(), naverEntity.getBody().getResponse().getNickname(),
 				LoginType.NAVER);
 		
-		Customer Customer=CustomerRepository.findByUserId(naverEntity.getBody().getResponse().getEnc_id());
+		User Customer=CustomerRepository.findByUserId(naverEntity.getBody().getResponse().getEnc_id());
 
 		// 로그인을 한번도 하지 않았을 경우. db에 정보 저장.
 		if (Customer == null) {

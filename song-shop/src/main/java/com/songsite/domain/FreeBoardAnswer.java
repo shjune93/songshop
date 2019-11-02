@@ -23,7 +23,7 @@ public class FreeBoardAnswer extends AbstractEntity{
 	
 	@ManyToOne
 	@JoinColumn(foreignKey=@ForeignKey(name="fk_answer_writer"))
-	private Customer writer;
+	private User writer;
 	
 	@ManyToOne
 	@JoinColumn(foreignKey=@ForeignKey(name="fk_answer_to_freeboard"))
@@ -38,7 +38,7 @@ public class FreeBoardAnswer extends AbstractEntity{
 		
 	}
 	
-	public FreeBoardAnswer(Customer writer,FreeBoard freeboard,String contents) {
+	public FreeBoardAnswer(User writer,FreeBoard freeboard,String contents) {
 		this.writer=writer;
 		this.freeboard=freeboard;
 		this.contents=contents;
@@ -54,7 +54,7 @@ public class FreeBoardAnswer extends AbstractEntity{
 		return "Answer [" + super.toString() + ", writer=" + writer + ", contents=" + contents + ",]";
 	}
 	
-	public boolean isSameWriter(Customer loginUser) {
+	public boolean isSameWriter(User loginUser) {
 		return loginUser.equals(this.writer);
 	}
 	

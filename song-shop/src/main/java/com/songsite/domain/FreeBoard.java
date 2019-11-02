@@ -33,7 +33,7 @@ public class FreeBoard extends AbstractEntity{
 	
 	@ManyToOne
 	@JoinColumn(foreignKey=@ForeignKey(name="fk_freeboard_writer"))
-	private Customer writer;
+	private User writer;
 	
 
 	private String title;
@@ -59,24 +59,22 @@ public class FreeBoard extends AbstractEntity{
 	
 	public FreeBoard() {}
 	
-	public FreeBoard(Customer writer, String title, String contents,FreeBoardFile file) {
+//	public FreeBoard(User writer, String title, String contents,FreeBoardFile file) {
+//		
+//		this.writer = writer;
+//		this.title = title;
+//		this.contents = contents;
+//		this.file=file;
+//		this.setFormattedCreateDate();
+//	
+//	}
+	
+	public FreeBoard(User writer, String title, String contents) {
 		
 		this.writer = writer;
 		this.title = title;
 		this.contents = contents;
-		this.file=file;
 		this.setFormattedCreateDate();
-	
-	}
-	
-	public FreeBoard(Customer writer, String title, String contents) {
-		
-		this.writer = writer;
-		this.title = title;
-		this.contents = contents;
-	
-		this.setFormattedCreateDate();
-	
 	}
 	
 	
@@ -84,13 +82,15 @@ public class FreeBoard extends AbstractEntity{
 	public void update(String title,String contents) {
 		this.title=title;
 		this.contents=contents;
+		
 		this.setFormattedModifiedDate();
 		
 	}
 
-	public boolean isSameWriter(Customer loginUser) {
-		
-		return this.writer.equals(loginUser);
+	public boolean isSameWriter(User loginUser) {
+		//System.out.println(this.writer.getId());
+		//System.out.println(loginUser.getId());
+		return this.writer.matchId(loginUser.getId());
 	}
 
 	public void addAnswer() {

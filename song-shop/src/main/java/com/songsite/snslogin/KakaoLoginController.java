@@ -12,9 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.songsite.domain.Customer;
+import com.songsite.domain.User;
 import com.songsite.enums.LoginType;
-import com.songsite.repository.CustomerRepository;
+import com.songsite.repository.UserRepository;
 import com.songsite.session.HttpSessionUtils;
 
 import lombok.extern.slf4j.Slf4j;
@@ -43,7 +43,7 @@ public class KakaoLoginController {
 	private RestTemplate restTemplate = new RestTemplate();
 
 	@Autowired
-	private CustomerRepository customerRepository;
+	private UserRepository customerRepository;
 
 	// 로그인 요청 성공후 콜백 되는 URL
 	@GetMapping(RedirectURI)
@@ -62,10 +62,10 @@ public class KakaoLoginController {
 				new HttpEntity<>(headers), Kakao.Customer.class);
 		log.info("\n[카카오 응답 데이터 : {}]", responseEntity.getBody());
 		
-		Customer newCustomer = new  Customer(responseEntity.getBody().getId(), responseEntity.getBody().getProperties().getNickname(),
+		User newCustomer = new  User(responseEntity.getBody().getId(), responseEntity.getBody().getProperties().getNickname(),
 				LoginType.KAKAO);
 		
-		Customer Customer=customerRepository.findByUserId(responseEntity.getBody().getId());
+		User Customer=customerRepository.findByUserId(responseEntity.getBody().getId());
 		
 		// 로그인을 한번도 하지 않았을 경우. db에 정보 저장.
 		if (Customer == null) {
