@@ -119,13 +119,14 @@ h3,h4,h5 {
 
 .article-header{
     display:table;width:100%;
-    padding-bottom:.6em;
+   padding-bottom:.6em; 
     border-bottom:1px dashed #dadada
 }
 .article-header-text,.article-header-thumb{display:table-cell;vertical-align:middle}
 .article-header-thumb{width:48px}
 .article-author-thumb{width:40px;height:40px;-webkit-border-radius:3px;border-radius:3px}
 .article-author-name{font-weight:bold;font-size:1.1em}
+.article-author-right{font-weight:bold;font-size:1.1em;text-align: right}
 .article-author-fbgroup{display:inline-block;margin-left:.8em;font-style:italic;font-size:1em;color:#666;}
 .article-author-fbgroup a{display:inline-block;color:#333;font-weight:bold;}
 @media (max-width: 480px){.article-author-fbgroup a{overflow:hidden;max-width:8em;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}
@@ -150,7 +151,7 @@ h3,h4,h5 {
 .article-util-list .link-answer-article{color:#5989b6;}
 .article-util-list .link-answer-article:hover{background-color:#e7eef4}
 .article-util-list .foundicon-thumb-up,.article-util-list .foundicon-thumb-down{position:relative;top:2px}.article-util form{display:inline-block}
-
+.article-right{font-weight:bold;font-size:1.1em;text-align: right}
 .qna-list h1 small {
     font-size:.4em
 }

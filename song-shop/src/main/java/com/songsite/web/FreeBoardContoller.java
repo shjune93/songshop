@@ -40,8 +40,13 @@ import com.songsite.repository.FreeBoardFileRepository;
 import com.songsite.repository.FreeBoardRepository;
 import com.songsite.session.HttpSessionUtils;
 
+import lombok.Getter;
+import lombok.Setter;
+
 
 @Controller
+@Getter
+@Setter
 @RequestMapping(value="freeboard", method = {RequestMethod.GET, RequestMethod.POST})
 public class FreeBoardContoller {
 	private static final Logger logger = LoggerFactory.getLogger(FreeBoardContoller.class);

@@ -8,7 +8,8 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.songsite.enums.Authority;
 import com.songsite.enums.LoginType;
 
@@ -27,9 +28,14 @@ public class User extends AbstractEntity {
 	
 	@Column(nullable=false, length=20 ,unique=true)
 	private String userId;
+	
+	@JsonIgnore
 	private String password;
+	
 	@Column(nullable=false, length=20 ,unique=true)
 	private String name;
+	
+	
 	@Column(nullable=false,unique=true)
 	private String email = "";
 	

@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Getter;
 
@@ -47,6 +47,7 @@ public class FreeBoard extends AbstractEntity{
 	
 	@OneToMany(mappedBy="freeboard")
 	@OrderBy("id DESC")
+	@JsonManagedReference
 	private List<FreeBoardAnswer> answers;
 	
 //	@OneToMany(mappedBy="freeboard")
@@ -55,6 +56,7 @@ public class FreeBoard extends AbstractEntity{
 	
 	@OneToOne(mappedBy="freeboard")
 	@OrderBy("id DESC")
+	@JsonManagedReference
 	private FreeBoardFile file;
 	
 	public FreeBoard() {}
