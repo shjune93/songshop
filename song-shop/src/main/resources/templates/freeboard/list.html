@@ -19,8 +19,9 @@
 					<li>
 						<div class="wrap">
 							<div class="main">
-								<strong class="subject"> <a href="/freeboard/{{id}}">{{title}}</a>
+								<strong class="subject"> <a href="/freeboard/{{id}}">{{title}} ({{countOfAnswer}})</a>
 								</strong>
+				
 								<div class="auth-info">
 									<i class="icon-add-comment"></i> <span class="time">{{FormattedCreateDate}}</span>
 									<a href="./user/profile.html" class="author">{{writer.userId}}</a>
@@ -34,7 +35,7 @@
 				</ul>
 				
 			</div>
-			<button type="button" onclick="location.href='/freeboard/form'" >글 쓰 기</button>
+			<button type="button" onclick="location.href='/freeboard/form'" class="btn btn-primary pull-right">글 쓰 기</button>
 		</div>
 	</div>
 	

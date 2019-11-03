@@ -139,8 +139,9 @@ h3,h4,h5 {
 .article-doc blockquote{margin-left:0;margin-right:0;border-left:4px solid #efefef;padding-left:.5em}
 .article-util form{display:inline-block}
 .article-util-list a,.article-util-list button{color:#999;padding:.4em;-webkit-border-radius:3px;border-radius:3px;border:0;background-color:transparent;white-space:nowrap;}
+
 .article-util-list a:hover,.article-util-list button:hover{text-decoration:none;background-color:#dadada}
-.article-util-list{margin:0;padding:0;list-style:none;color:#999;}
+.article-util-list{margin:0;padding:0;list-style:none;color:#999;text-align: right;}
 .article-util-list li{display:inline-block;}
 .article-util-list li:before{content:'|';margin:0 -.4em}
 .article-util-list li:first-child:before{display:none}
@@ -152,6 +153,10 @@ h3,h4,h5 {
 .article-util-list .link-answer-article:hover{background-color:#e7eef4}
 .article-util-list .foundicon-thumb-up,.article-util-list .foundicon-thumb-down{position:relative;top:2px}.article-util form{display:inline-block}
 .article-right{font-weight:bold;font-size:1.1em;text-align: right}
+.article-util-right{text-align: right;margin:0;padding:0;list-style:none;color:#999;}
+.article-util-right li{display:inline-block;}
+.article-util-right li:before{content:'|';margin:0 -.4em}
+.article-util-right li:first-child:before{display:none}
 .qna-list h1 small {
     font-size:.4em
 }

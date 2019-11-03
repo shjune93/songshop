@@ -51,6 +51,13 @@ public class FreeBoardAnswer extends AbstractEntity{
 	public FreeBoardAnswer() {
 		
 	}
+	
+	public boolean isSameWriter(User loginUser) {
+		//System.out.println(this.writer.getId());
+		//System.out.println(loginUser.getId());
+		return this.writer.matchId(loginUser.getId());
+	}
+	
 
 	@Override
 	public String toString() {

@@ -27,22 +27,28 @@
 									src="https://graph.facebook.com/v2.3/100000059371774/picture"
 									class="article-author-thumb" alt="">
 							</div>
-							<div class="article-header-text">
-								<a href="#" class="article-author-name">{{writer.userId}}</a>
+							<div class="article-util">
+								
+								<a href="#" class="article-author-name">{{writer.userId}}</div>
 								<div class="article-right">
-										{{#file.fileDownloadUri}} 
-										<a href="{{file.fileDownloadUri}}" class="article-right">첨부파일</a> 
-										{{/file.fileDownloadUri}}
-								<div>{{FormattedCreateDate}}</div>
+								<div>
+									{{FormattedCreateDate}}</div>
 								</div>
 							</div>
+						</div>
+						<div class="article-util-right">
+						{{#file.fileDownloadUri}} 
+						<a href="{{file.fileDownloadUri}}" class="article-right">첨부파일</a> 
+						{{/file.fileDownloadUri}}
 						</div>
 						<div>
 							<pre>{{contents}}</pre>
 
 						</div>
+						
 						<div class="article-util">
 							<ul class="article-util-list">
+							{{^showupdatedelete}}
 								<li><a href="/freeboard/{{id}}/updateform">수정</a></li>
 								<li>
 									<form class="form-delete" action="/freeboard/{{id}}/delete"
@@ -50,6 +56,7 @@
 										<button type="submit">삭제</button>
 									</form>
 								</li>
+							{{/showupdatedelete}}
 								<li><a href="/freeboard/list">목록</a></li>
 							</ul>
 						</div>
@@ -75,15 +82,18 @@
 										</div>
 									</div>
 									<div class="article-doc comment-doc">{{contents}}</div>
+									{{^showupdatedelete}}
 									<div class="article-util">
-										<ul class="article-util-list">
-											<li><a class="link-modify-article"
-												href="">수정</a></li>
+										<ul class="article-util-list"> 
+										<!-- 수정기능 추후 -->
+										<!--  	<li><a class="link-modify-article"
+												href="">수정</a></li> -->
 											<li><a class="link-delete-article"
-												href="">삭제</a>
+												href="/freeboard/{{freeboard.id}}/api/answers/{{id}}/delete">삭제</a>
 											</li>
 										</ul>
 									</div>
+									{{/showupdatedelete}}
 								</article>
 								{{/answers}}
 
@@ -102,7 +112,12 @@
 			{{/freeboard}}
 		</div>
 	</div>
-
+{{#errorMessage}}
+	<script> 
+		var message = {{errorMessage}}; 
+		alert(message); 
+	</script>
+{{/errorMessage}}
 <script type="text/template" id="answerTemplate">
 	<article class="article">
 	{{#freeboard}}

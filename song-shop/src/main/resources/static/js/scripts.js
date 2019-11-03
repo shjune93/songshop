@@ -54,7 +54,7 @@ function deleteAnswer(e){
 	console.log("url : " +url);
 	
 	$.ajax({
-		type:'delete',
+		type:'post',
 		url:url,
 		dataType:'json',
 		error:function(xhr,status){

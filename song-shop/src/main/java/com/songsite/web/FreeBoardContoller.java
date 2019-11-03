@@ -4,11 +4,13 @@ package com.songsite.web;
 import java.io.Console;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -29,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.songsite.domain.User;
@@ -85,9 +88,16 @@ public class FreeBoardContoller {
 
 
 	//상세내용 보기
-	@GetMapping("{id}")
-	public String show(@PathVariable Long id,Model model) {
+	@GetMapping("{id}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
+	public String show(HttpSession session,@PathVariable Long id,Model model) {
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
+		Result result=valid(session,freeboard);
+		if(!result.isValid()) {
+			//인증안될시 알림창 띄움
+			model.addAttribute("showupdatedelete","show"); //수정/삭제 생성여부 결정
+			
+		}
+		
 		model.addAttribute("freeboard",freeboard);
 		return "/freeboard/show";
 	}
@@ -106,14 +116,23 @@ public class FreeBoardContoller {
 
 	//게시판 수정 폼으로 이동
 	@PostMapping("{id}/updateform")
-	public String updateForm(HttpSession session,@PathVariable Long id,Model model) {
+	public String updateForm(HttpSession session,HttpServletResponse response,@PathVariable Long id,Model model){
 
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);
 		if(!result.isValid()) {
-			model.addAttribute("errorMessage",result.getErrorMessage());
+			//인증안될시 알림창 띄움
+			model.addAttribute("errorMessage",result.getErrorMessage()); //알림창에 뜰 메세지 저장 리다이렉트 되는곳으로 전달
+			//model.addAttribute("freeboard",freeboard);
+//			response.setContentType("text/html; charset=UTF-8");
+//			PrintWriter out = response.getWriter();
+//			out.println("<script>alert("+result.getErrorMessage()+");location.href='/freeboard/"+id+"';</script>");
+//			out.flush();
 			return "redirect:/freeboard/"+id;
+			//return "";
+			
 		}
+	
 		model.addAttribute("freeboard",freeboard);
 		return "/freeboard/updateForm";
 	}

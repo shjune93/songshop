@@ -1815,3 +1815,82 @@ java.lang.NullPointerException
 !MESSAGE null
 !STACK 0
 java.lang.NullPointerException
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-03 09:56:31.029
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:25.570
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.CQRjvZIC
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:25.576
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.CQRjvZIC
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:25.582
+!MESSAGE subsribers = {sts4.classpath.LjDdUaxv=Send Classpath Notifications(4349)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:25.586
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.CQRjvZIC => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:27.515
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:27.521
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@2b3ee95e[org.springframework.tooling.boot.ls:1.11.0.201909171347(id=632)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:27.526
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.814
+!MESSAGE Boot LS startup time from start to initialized: 5280ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.850
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.tCgIEQkNisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.857
+!MESSAGE subscribing to classpath changes: sts4.classpath.tCgIEQkN isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.862
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.867
+!MESSAGE subsribers = {sts4.classpath.LjDdUaxv=Send Classpath Notifications(4349), sts4.classpath.tCgIEQkN=Send Classpath Notifications(17204)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.872
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.877
+!MESSAGE project song-shop ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.882
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.886
+!MESSAGE Preparing classpath changed notification song-shop
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.891
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.tCgIEQkN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.895
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.922
+!MESSAGE classpath=121 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.934
+!MESSAGE buffering callback sts4.classpath.tCgIEQkN song-shop false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.939
+!MESSAGE executing callback sts4.classpath.tCgIEQkN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-03 10:36:32.965
+!MESSAGE executing callback sts4.classpath.tCgIEQkN SUCCESS [done]
