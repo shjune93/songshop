@@ -1,0 +1,18 @@
+package com.songsite.pasing;
+
+import javax.persistence.Entity;
+
+
+public class PageNum {
+	private int pageNum;
+	public PageNum(int pageNum){
+		this.pageNum=pageNum;
+	}
+	public int getPageNum() {
+		return pageNum;
+	}
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
+	}
+	
+}

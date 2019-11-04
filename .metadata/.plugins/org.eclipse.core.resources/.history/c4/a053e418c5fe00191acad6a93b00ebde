@@ -1,0 +1,5 @@
+package com.songsite.pasing;
+
+public class PageNum {
+	private int num;
+}

@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Getter;
@@ -27,7 +29,7 @@ import lombok.Setter;
 @Entity
 @Setter //setter생성
 @Getter //getter생성
-public class FreeBoard extends AbstractEntity{
+public class FreeBoard extends AbstractEntity implements Comparable<FreeBoard>{// implements Comparable<FreeBoard> 객체 정렬을 위한 부분 overrid 부분
 
 	
 	
@@ -103,6 +105,16 @@ public class FreeBoard extends AbstractEntity{
 
 	public void deleteAnswer() {
 		this.countOfAnswer-=1;
+	}
+
+	@Override
+	public int compareTo(FreeBoard freeboard) {//내림차순
+		if(getId()>freeboard.getId()) {
+			return -1;
+		}else if(getId()<freeboard.getId()) {
+			return 1;
+		}
+		return 0;
 	}
 	
 

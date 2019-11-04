@@ -1,0 +1,8 @@
+package com.songsite.pasing;
+
+public class PageNum {
+	int pageNum;
+	PageNum(int pageNum){
+		this.pageNum=pageNum;
+	}
+}
