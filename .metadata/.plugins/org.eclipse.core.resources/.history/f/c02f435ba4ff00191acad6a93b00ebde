@@ -4,7 +4,6 @@ $(".answer-write input[type=submit]").click(addAnswer);
 
 $(".link-delete-article").click(deleteAnswer);
 
-
 function addAnswer(e){
 	e.preventDefault();
 	console.log("click me");

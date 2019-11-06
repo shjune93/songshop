@@ -37,7 +37,7 @@
 			</div>
 			{{#before}} <a href="/freeboard/list/{{.}}">before</a> {{/before}}
 			{{#beforePageNum}} <a href="/freeboard/list/{{.}}">{{.}}</a> {{/beforePageNum}}
-			{{#curPageNum}} <a class="curPage" href="/freeboard/list/{{.}}">{{.}}</a> {{/curPageNum}}
+			{{#curPageNum}} <a href="/freeboard/list/{{.}}">{{.}}</a> {{/curPageNum}}
 			{{#nextPageNum}} <a href="/freeboard/list/{{.}}">{{.}}</a> {{/nextPageNum}}
 			{{#next}} <a href="/freeboard/list/{{.}}">next</a> {{/next}}
 			<button type="button" onclick="location.href='/freeboard/form'"

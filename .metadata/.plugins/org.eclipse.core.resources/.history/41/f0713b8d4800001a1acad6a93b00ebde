@@ -82,7 +82,7 @@ public class FreeBoardContoller {
 	}
 
 	//리스트 보기
-	@GetMapping("list/{curPage}")
+	@GetMapping("list/{CurPage}")
 	public String list(HttpSession session, HttpServletRequest request,Model model,@PathVariable int curPage) {
 		//model.addAttribute("freeboards",freeBoardRepository.findAll());
 

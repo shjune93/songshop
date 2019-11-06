@@ -27,11 +27,11 @@
 									src="https://graph.facebook.com/v2.3/100000059371774/picture"
 									class="article-author-thumb" alt="">
 							</div>
-							<a href="/freeboard/{{id}}/updateform">{{writer.userId}}</a>
-								
-								<div class="article-util">
+							<div class="article-util">
+								<a href="#" class="article-author-name">{{writer.userId}}
 							</div>
-								<div class="article-right">{{FormattedCreateDate}}</div>
+							<div class="article-right">
+								<div>{{FormattedCreateDate}}</div>
 							</div>
 						</div>
 					</div>
@@ -56,9 +56,8 @@
 						</li> 
 						{{/showupdatedelete}}
 						<li>
-							{{#listNum}}<a href="/freeboard/list/{{.}}">목록</a>{{/listNum}}
-							
-							<!--  <input type="button" value="돌아가기" onClick="history.go(-1)">-->
+							<!--  <a href="/freeboard/list">목록</a>--> <input type="button"
+							value="돌아가기" onClick="history.go(-1)">
 						</li>
 					</ul>
 				</div>

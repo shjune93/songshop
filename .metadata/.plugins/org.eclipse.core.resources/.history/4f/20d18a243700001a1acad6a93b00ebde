@@ -82,7 +82,7 @@ public class FreeBoardContoller {
 	}
 
 	//리스트 보기
-	@GetMapping("list/{curPage}")
+	@GetMapping("list/{CurPage}")
 	public String list(HttpSession session, HttpServletRequest request,Model model,@PathVariable int curPage) {
 		//model.addAttribute("freeboards",freeBoardRepository.findAll());
 
@@ -128,10 +128,8 @@ public class FreeBoardContoller {
 				model.addAttribute("next",next);
 			}
 		}
-		model.addAttribute("beforePageNum",beforePageNum);
-		model.addAttribute("curPageNum",curPageNum);
-		model.addAttribute("nextPageNum",nextPageNum);
-		//model.addAttribute("page",pageNum); //전체 페이지 넘겨주기
+		
+		model.addAttribute("page",pageNum);
 		model.addAttribute("freeboards",tmpArrayList);
 //		
 		return "/freeboard/list";

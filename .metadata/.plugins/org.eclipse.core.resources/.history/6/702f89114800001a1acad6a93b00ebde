@@ -18,8 +18,8 @@
 					<li>
 						<div class="wrap">
 							<div class="main">
-								<strong class="subject">{{#curPageNum}}  <a href="/freeboard/{{.}}/{{id}}">{{title}}
-										({{countOfAnswer}})</a>{{/curPageNum}} 
+								<strong class="subject"> <a href="/freeboard/{{id}}">{{title}}
+										({{countOfAnswer}})</a>
 								</strong>
 
 								<div class="auth-info">
@@ -37,7 +37,7 @@
 			</div>
 			{{#before}} <a href="/freeboard/list/{{.}}">before</a> {{/before}}
 			{{#beforePageNum}} <a href="/freeboard/list/{{.}}">{{.}}</a> {{/beforePageNum}}
-			{{#curPageNum}} <a class="curPage" href="/freeboard/list/{{.}}">{{.}}</a> {{/curPageNum}}
+			{{#curPageNum}} <a href="/freeboard/list/{{.}}">{{.}}</a> {{/curPageNum}}
 			{{#nextPageNum}} <a href="/freeboard/list/{{.}}">{{.}}</a> {{/nextPageNum}}
 			{{#next}} <a href="/freeboard/list/{{.}}">next</a> {{/next}}
 			<button type="button" onclick="location.href='/freeboard/form'"

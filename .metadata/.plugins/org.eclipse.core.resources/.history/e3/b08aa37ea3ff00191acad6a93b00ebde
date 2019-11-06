@@ -56,9 +56,8 @@
 						</li> 
 						{{/showupdatedelete}}
 						<li>
-							{{#listNum}}<a href="/freeboard/list/{{.}}">목록</a>{{/listNum}}
-							
-							<!--  <input type="button" value="돌아가기" onClick="history.go(-1)">-->
+							<!--  <a href="/freeboard/list">목록</a>--> 
+							<input type="button" value="돌아가기" onClick="history.go(-1)">
 						</li>
 					</ul>
 				</div>
