@@ -153,23 +153,22 @@ public class FreeBoardContoller {
 
 
 	//상세내용 보기
-	@GetMapping("{listNum}/{id}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
+	@GetMapping("{listNum}/{id}/{keyword}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
 	public String show(
 			HttpSession session,
 			@PathVariable Long id,
 			@PathVariable int listNum,
-			@RequestParam(required = false) String keyword,
+			@PathVariable(required = false) String keyword,
 			Model model) {
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);
-		//System.out.println("null");
 		if(!result.isValid()) {
 			//인증안될시 알림창 띄움
 			model.addAttribute("showupdatedelete","show"); //수정/삭제 생성여부 결정
 			
 		}
-	
-	
+		String title=keyword;
+		System.out.println(title);
 		model.addAttribute("keyword",keyword);
 		model.addAttribute("listNum",listNum);
 		model.addAttribute("freeboard",freeboard);

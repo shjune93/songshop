@@ -158,7 +158,7 @@ public class FreeBoardContoller {
 			HttpSession session,
 			@PathVariable Long id,
 			@PathVariable int listNum,
-			@RequestParam(required = false) String keyword,
+			@PathVariable(required = false) String keyword,
 			Model model) {
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);

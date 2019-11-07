@@ -50,7 +50,7 @@
 							<button type="submit">삭제</button>
 						</form>
 					</li> {{/showupdatedelete}}
-					<li>{{#listNum}}<a href="/freeboard/list/{{.}}{{#keyword}}?keyword={{.}}{{/keyword}}">목록</a>{{/listNum}}
+					<li>{{#listNum}}<a href="/freeboard/list/{{.}}{{#keyword}}?keword={{.}}{{/keyword}}">목록</a>{{/listNum}}
 
 						<!--  <input type="button" value="돌아가기" onClick="history.go(-1)">-->
 					</li>

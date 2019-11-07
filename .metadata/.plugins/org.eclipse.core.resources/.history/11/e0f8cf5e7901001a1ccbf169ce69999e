@@ -153,12 +153,12 @@ public class FreeBoardContoller {
 
 
 	//상세내용 보기
-	@GetMapping("{listNum}/{id}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
+	@GetMapping("{listNum}/{id}{keyword}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
 	public String show(
 			HttpSession session,
 			@PathVariable Long id,
 			@PathVariable int listNum,
-			@RequestParam(required = false) String keyword,
+			@PathVariable(required = false) String keyword,
 			Model model) {
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);
