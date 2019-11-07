@@ -83,10 +83,23 @@ public class FreeBoardContoller {
 
 	//리스트 보기
 	@GetMapping("list/{curPage}")
-	public String list(HttpSession session, HttpServletRequest request,Model model,@PathVariable int curPage) {
+	public String list(
+			Model model,
+			@PathVariable int curPage,
+			@RequestParam(required = false) String keyword,
+			@RequestParam(required = false) String contents
+			) {
 		//model.addAttribute("freeboards",freeBoardRepository.findAll());
-
-		List<FreeBoard> freeBoardList=freeBoardRepository.findAll();
+		List<FreeBoard> freeBoardList;
+		 if (keyword != null) {
+			 freeBoardList= freeBoardRepository.findByTitleContaining(keyword);
+	        } else if (contents != null) {
+	        	freeBoardList= freeBoardRepository.findByContentsContaining(contents);
+	        }else {
+	        	freeBoardList=freeBoardRepository.findAll();
+	        	model.addAttribute("Null","null");
+	        }
+		//List<FreeBoard> freeBoardList=freeBoardRepository.findAll();
 		int listCnt=freeBoardList.size();
 		
 		FreeBoard[] arrayFreeBoard=freeBoardList.toArray(new FreeBoard[listCnt]);
@@ -128,6 +141,7 @@ public class FreeBoardContoller {
 				model.addAttribute("next",next);
 			}
 		}
+		model.addAttribute("keyword",keyword);
 		model.addAttribute("beforePageNum",beforePageNum);
 		model.addAttribute("curPageNum",curPageNum);
 		model.addAttribute("nextPageNum",nextPageNum);
@@ -139,8 +153,13 @@ public class FreeBoardContoller {
 
 
 	//상세내용 보기
-	@GetMapping("{listNum}/{id}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
-	public String show(HttpSession session,@PathVariable Long id,@PathVariable int listNum,Model model) {
+	@GetMapping("{listNum}/{id}{keyword}")//@RequestParam("errorMessage") String errorMessage 리다이렉트 받는부분
+	public String show(
+			HttpSession session,
+			@PathVariable Long id,
+			@PathVariable int listNum,
+			@PathVariable(required = false) String keyword,
+			Model model) {
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);
 		if(!result.isValid()) {
@@ -148,6 +167,9 @@ public class FreeBoardContoller {
 			model.addAttribute("showupdatedelete","show"); //수정/삭제 생성여부 결정
 			
 		}
+		String title=keyword;
+		System.out.println(title);
+		model.addAttribute("keyword",keyword);
 		model.addAttribute("listNum",listNum);
 		model.addAttribute("freeboard",freeboard);
 		return "/freeboard/show";
@@ -325,8 +347,73 @@ public class FreeBoardContoller {
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
 				.body(resource);
 	}
-
-
+	
+	
+//	@GetMapping("list/{curPage}")
+//	public String search(@RequestParam(required = false) String title,
+//            			@RequestParam(required = false) String contents,
+//            			@PathVariable int curPage,Model model) {
+//		List<FreeBoard> freeBoardSearchList;
+//		 if (title != null) {
+//			 freeBoardSearchList= freeBoardRepository.findByTitleContaining(title);
+//	        } else if (contents != null) {
+//	        	 freeBoardSearchList= freeBoardRepository.findByContentsContaining(contents);
+//	        }else {
+//	        	freeBoardSearchList=freeBoardRepository.findAll();
+//	        	model.addAttribute("Null","null");
+//	        }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//			
+//			int listCnt=freeBoardSearchList.size();
+//			
+//			FreeBoard[] arrayFreeBoard=freeBoardSearchList.toArray(new FreeBoard[listCnt]);
+//			Arrays.sort(arrayFreeBoard);
+//			//System.out.println(arrayFreeBoard.length);
+//			
+//			List tmpArrayList = new ArrayList<FreeBoard>();
+//			int pageRange=(curPage-1)/10; //현재 페이지 범위
+//			for(int i=(curPage-1)*10;i<(curPage-1)*10+10;i++) {//현재 페이지에 해당하는 글담기
+//				if(i==arrayFreeBoard.length)break;
+//				tmpArrayList.add(arrayFreeBoard[i]);
+//				//System.out.println(arrayList[i]);
+//				
+//				
+//			}
+//			List beforePageNum=new ArrayList<Integer>();
+//			List curPageNum=new ArrayList<Integer>();
+//			List nextPageNum=new ArrayList<Integer>();
+//			int next=0;
+//			int before=0;
+//			if(pageRange!=0) {
+//				before=(pageRange-1)*10+10;
+//				model.addAttribute("before",before);
+//			}
+//			for(int i=1;i<=10;i++) {//현재페이지에 해당하는 페이지 범위 표시
+//				//페이지숫자
+//				if(pageRange*10+i>listCnt/10+1)break; //페이지 끝일경우
+//				//pageNum.add(new PageNum(pageRange*10+i));
+//				if(curPage>pageRange*10+i) {
+//					beforePageNum.add(pageRange*10+i);
+//				}else if(curPage<pageRange*10+i) {
+//					nextPageNum.add(pageRange*10+i);
+//				}else {
+//					curPageNum.add(pageRange*10+i);
+//				}
+//				//pageNum.add(pageRange*10+i); 페이지 추가
+//				if(i==10) {//next표시여부
+//					next=(pageRange+1)*10+1;
+//					model.addAttribute("next",next);
+//				}
+//			}
+//			model.addAttribute("title",title);
+//			model.addAttribute("beforePageNum",beforePageNum);
+//			model.addAttribute("curPageNum",curPageNum);
+//			model.addAttribute("nextPageNum",nextPageNum);
+//			//model.addAttribute("page",pageNum); //전체 페이지 넘겨주기
+//			model.addAttribute("freeboards",tmpArrayList);
+//			
+//			return "/freeboard/list";
+//	}
 
 
 

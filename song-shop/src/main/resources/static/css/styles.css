@@ -206,12 +206,9 @@ h3,h4,h5 {
     padding-top: 1.4em;
     padding-right: 2.5em;
 }
-.pre{
-	font-size: 20px;	
+.pre:nohover{
+	font-size: 10px;	
 	
-}
-.curPage{
-	color: red;
 }
 
 }

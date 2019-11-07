@@ -1,5 +1,0 @@
-package com.songsite.fileservice;
-
-public class FileUploadDownloadService {
-
-}

@@ -1,2 +1,0 @@
-#controller html인식
- spring.mustache.suffix: .html 

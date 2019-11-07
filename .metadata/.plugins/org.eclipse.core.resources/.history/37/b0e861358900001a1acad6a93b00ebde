@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+{{> include/header}}
+{{> include/navigation}}
+</head>
+
+<body>
+
+
+
+	<div class="container" id="main">
+		<div class="row">
+
+			<div id="carousel-example-generic" class="carousel slide"
+				data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img class="slide-image" src="/images/1.png" alt=""
+							style="height: 427.5px; right: 100%;">
+					</div>
+					<div class="item">
+						<img class="slide-image" src="/images/1.png" alt=""
+							style="height: 427.5px; right: 100%;">
+					</div>
+					<div class="item">
+						<img class="slide-image" src="" /images/1.png"
+										alt=""
+							style="height: 427.5px; right: 100%;">
+					</div>
+				</div>
+				<a class="left carousel-control" href="#carousel-example-generic"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left"></span>
+				</a> <a class="right carousel-control" href="#carousel-example-generic"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+
+	<ul class="list">
+		{{#questions}}
+		<li>
+			<div class="wrap">
+				<div class="main">
+					<strong class="subject"> <a href="/questions/{{id}}">{{title}}</a>
+					</strong>
+					<div class="auth-info">
+						<i class="icon-add-comment"></i> <span class="time">{{FormattedCreateDate}}</span>
+						<a href="./user/profile.html" class="author">{{writer.userId}}</a>
+					</div>
+					<div class="reply" title="댓글">
+						<i class="icon-reply">{{countOfAnswer}}</i> <span class="point"></span>
+					</div>
+				</div>
+			</div>
+		</li> {{/questions}}
+
+	</ul>
+	<!-- 
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-center">
+			<ul class="pagination center-block" style="display: inline-block;">
+				<li><a href="#">«</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">»</a></li>
+			</ul>
+		</div>
+		<div class="col-md-3 qna-write">
+			<a href="/questions/form" class="btn btn-primary pull-right"
+				role="button">질문하기</a>
+		</div>
+	</div>
+	 -->
+<div class="about-me-inner site-container">
+			<article class="portfolio-wrapper">
+				<div class="portfolio__img">
+					<img src="./images/about-me.jpg" class="about-me__profile" alt="about me profile picture">
+				</div>
+				<div class="portfolio__bottom">
+					<div class="portfolio__name">
+						<span>J</span>
+						<h2 class="universal-h2">hone Smith</h2>
+					</div>
+					<p>Jhone Smith is a short story author, novelist, and award-winning poet.</p>
+				</div>
+			</article>
+			<div class="about-me__text">
+				<div class="about-me-slider slick-initialized slick-slider"><span class="span-arrow slick-prev slick-arrow" style="display: block;">&lt;</span>
+					<div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2455px; transform: translate3d(-491px, 0px, 0px);"><div class="about-me-single-slide slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 491px;" tabindex="-1">
+						<h2 class="universal-h2 universal-h2-bckg">About me 2</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div><div class="about-me-single-slide slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 491px;" tabindex="0">
+						<h2 class="universal-h2 universal-h2-bckg">About me</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div><div class="about-me-single-slide slick-slide" data-slick-index="1" aria-hidden="true" style="width: 491px;" tabindex="-1">
+						<h2 class="universal-h2 universal-h2-bckg">About me 2</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div><div class="about-me-single-slide slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" style="width: 491px;" tabindex="-1">
+						<h2 class="universal-h2 universal-h2-bckg">About me</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div><div class="about-me-single-slide slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 491px;" tabindex="-1">
+						<h2 class="universal-h2 universal-h2-bckg">About me 2</h2>
+						<p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created a community for authors to learn and connect.</p>
+						<h4>Author</h4>
+						<p class="p-white">See me</p>
+					</div></div></div>
+					
+				<span class="span-arrow slick-next slick-arrow" style="display: block;">&gt;</span></div>
+			</div>
+		</div>
+
+
+
+	{{> include/footer}}
+	<script src="../js/owl.carousel.js"></script>
+</body>
+
+</html>
