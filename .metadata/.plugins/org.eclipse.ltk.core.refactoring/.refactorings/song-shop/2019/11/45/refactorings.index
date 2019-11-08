@@ -8,3 +8,18 @@
 1573046738068	Rename resource '2-10.png'
 1573046739741	Rename resource '2-8.jpg'
 1573046742920	Rename resource '2-9.png'
+1573205484400	Rename type 'ProjectBoard'
+1573205496918	Rename type 'ProjectBoardAnswer'
+1573205509654	Rename type 'ProjectBoardRepository'
+1573205533571	Rename type 'ProjectController'
+1573205658676	Delete element
+1573205670415	Rename resource 'projectboard'
+1573205676507	Copy files
+1573209916158	Delete element
+1573212541431	Delete element
+1573212543273	Delete element
+1573218886294	Rename resource 'form.html'
+1573218899121	Rename resource 'list.html'
+1573218905863	Rename resource 'show.html'
+1573218909563	Rename resource 'updateForm.html'
+1573223660626	Rename type 'CategoryBoardBoardAnswer'

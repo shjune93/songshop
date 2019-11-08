@@ -179,7 +179,8 @@ public class FreeBoardContoller {
 
 	//#로그인 확인후 게시판 적기 이동
 	@GetMapping("form")
-	public String loginForm(HttpSession session, HttpServletRequest request) {
+	public String loginForm(
+			HttpSession session) {
 		if (session.getAttribute(HttpSessionUtils.User_SESSION_KEY) == null) {
 			// 이미 로그인 상태일 경우
 			return "redirect:/login";
@@ -189,38 +190,44 @@ public class FreeBoardContoller {
 
 
 	//게시판 수정 폼으로 이동
-	@PostMapping("{id}/updateform")
-	public String updateForm(HttpSession session,HttpServletResponse response,@PathVariable Long id,Model model){
+	@PostMapping("{listNum}/{id}/updateform")
+	public String updateForm(HttpSession session,
+			@PathVariable Long id,
+			@PathVariable int listNum,
+			Model model){
 
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);
 		if(!result.isValid()) {
 			//인증안될시 알림창 띄움
 			model.addAttribute("errorMessage",result.getErrorMessage()); //알림창에 뜰 메세지 저장 리다이렉트 되는곳으로 전달
-			//model.addAttribute("freeboard",freeboard);
-//			response.setContentType("text/html; charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			out.println("<script>alert("+result.getErrorMessage()+");location.href='/freeboard/"+id+"';</script>");
-//			out.flush();
-			return "redirect:/freeboard/"+id;
+			return "redirect:/freeboard/"+listNum+"/"+id;
 			//return "";
 			
 		}
-	
+		model.addAttribute("listNum",listNum);
 		model.addAttribute("freeboard",freeboard);
 		return "/freeboard/updateForm";
 	}
 	//redirect는 주소로 없으면 templates 폴더의 html파일로
 
 	//게시판 수정
-	@PostMapping("{id}/update")
-	public String update(HttpSession session,@PathVariable Long id,String title,String contents,@RequestParam("file") MultipartFile file,Model model) {
+	@PostMapping("{listNum}/{id}/update")
+	public String update(
+			HttpSession session,
+			@PathVariable int listNum,
+			@PathVariable Long id,
+			String title,
+			String contents,
+			@RequestParam("file") MultipartFile file,
+			Boolean fileDeleteCheck,
+			Model model) {
 
 		FreeBoard freeboard=freeBoardRepository.findById(id).get();
 		Result result=valid(session,freeboard);
 		if(!result.isValid()) {
 			model.addAttribute("errorMessage",result.getErrorMessage());
-			return "redirect:/freeboard/"+id;
+			return "redirect:/freeboard/"+listNum+"/"+id;
 		}
 
 		freeboard.update(title,contents);
@@ -253,7 +260,22 @@ public class FreeBoardContoller {
 			freeBoardFileRepository.save(freeboardFile);
 
 		}
-		return "redirect:/freeboard/"+id;
+		if(fileDeleteCheck!=null&&fileDeleteCheck){
+			if(freeboard.getFile()!=null) {
+				String path="C:\\Users\\shjun\\git\\songshop\\song-shop\\files\\"+freeboard.getId().toString()+"\\"+freeboard.getFile().getFileName();
+				System.out.println("파일경로"+path);
+				File beforeFile= new File(path);
+				if(beforeFile.exists()==true) {
+
+					beforeFile.delete();
+					System.out.println(path+"삭제 완료");
+				}
+				freeBoardFileRepository.deleteById(freeboard.getFile().getId());
+				//freeBoardFileRepository.deleteById(id);
+			}
+			
+		}
+		return "redirect:/freeboard/"+listNum+"/"+id;
 	}
 
 	//게시판 삭제
@@ -287,7 +309,11 @@ public class FreeBoardContoller {
 
 	//게시판등록
 	@PostMapping("create")
-	public String create(String title,String contents,@RequestParam("file") MultipartFile file,HttpSession session){
+	public String create(
+			String title,
+			String contents,
+			@RequestParam("file") MultipartFile file,
+			HttpSession session){
 		if(!HttpSessionUtils.isLoginUser(session)) {
 			return "/login";
 		}

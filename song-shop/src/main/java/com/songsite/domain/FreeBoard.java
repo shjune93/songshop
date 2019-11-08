@@ -43,7 +43,7 @@ public class FreeBoard extends AbstractEntity implements Comparable<FreeBoard>{/
 	private String contents;
 
 
-	private Integer countOfAnswer = 0;
+	private int countOfAnswer = 0;
 	
 	
 	

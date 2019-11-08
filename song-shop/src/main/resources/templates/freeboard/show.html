@@ -43,7 +43,7 @@
 			<div class="article-util">
 				<ul class="article-util-list">
 					{{^showupdatedelete}}
-					<li><a href="/freeboard/{{id}}/updateform">수정</a></li>
+					<li><a href="/freeboard/{{#listNum}}{{.}}{{/listNum}}/{{id}}/updateform">수정</a></li>
 					<li>
 						<form class="form-delete" action="/freeboard/{{id}}/delete"
 							method="POST">
@@ -135,10 +135,8 @@
 		<div class="article-util">
 		<ul class="article-util-list">
 			<li>
-				<a class="link-modify-article" href="/api/qna/updateAnswer/{{id}}">수정</a>
-			</li>
-			<li>
 				<a class="link-delete-article" href="/api/questions/{{id}}/answers/{3}/delete">삭제</a>
+
 			</li>
 		</ul>
 		</div>
