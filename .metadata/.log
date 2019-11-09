@@ -2723,3 +2723,180 @@ java.lang.InterruptedException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 02:09:37.223
 !MESSAGE executing callback sts4.classpath.fvIjOCym SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 02:25:36.144
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fvIjOCym
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 02:25:36.150
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.fvIjOCym
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 02:25:36.156
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 02:25:36.161
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fvIjOCym => OK
+
+!ENTRY org.eclipse.ui 2 2 2019-11-09 02:25:36.590
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2019-11-09 09:55:52.306 -----------------------------------------------
+eclipse.buildId=4.4.0.201909171436-RELEASE
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2019-11-09 09:56:03.480
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-11-09 09:56:03.480
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@625f5712,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5e62ca19,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-11-09 09:56:18.387
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\shjun'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:55:57.663
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:55:57.670
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@32f8a37b[org.springframework.tooling.boot.ls:1.11.0.201909171347(id=632)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:55:57.685
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:55:57.874
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:03.935
+!MESSAGE Boot LS startup time from start to initialized: 6221ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:03.984
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fLzqbKEnisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:03.992
+!MESSAGE subscribing to classpath changes: sts4.classpath.fLzqbKEn isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:03.999
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.006
+!MESSAGE subsribers = {sts4.classpath.fLzqbKEn=Send Classpath Notifications(829)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.011
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.015
+!MESSAGE project song-shop ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.020
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.024
+!MESSAGE Preparing classpath changed notification song-shop
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.028
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fLzqbKEn => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.033
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.053
+!MESSAGE classpath=121 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.064
+!MESSAGE buffering callback sts4.classpath.fLzqbKEn song-shop false 121
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.068
+!MESSAGE executing callback sts4.classpath.fLzqbKEn 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2019-11-09 11:56:04.100
+!MESSAGE executing callback sts4.classpath.fLzqbKEn SUCCESS [done]
+
+!ENTRY org.eclipse.core.contenttype 4 0 2019-11-09 13:01:09.999
+!MESSAGE Could not create content describer for ZipEditor.zipfile. Content type has been disabled.
+!STACK 0
+java.lang.IllegalStateException: org.eclipse.core.internal.content.LowLevelIOException
+	at zipeditor.model.ZipModel.detectType(ZipModel.java:139)
+	at zipeditor.model.ZipContentDescriber.detectType(ZipContentDescriber.java:61)
+	at zipeditor.model.ZipContentDescriber.describe(ZipContentDescriber.java:43)
+	at org.eclipse.core.internal.content.ContentType.describe(ContentType.java:182)
+	at org.eclipse.core.internal.content.ContentType.internalGetDescriptionFor(ContentType.java:473)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:393)
+	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:397)
+	at org.eclipse.core.internal.content.ContentTypeMatcher.getDescriptionFor(ContentTypeMatcher.java:82)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.readDescription(ContentDescriptionManager.java:455)
+	at org.eclipse.core.internal.resources.ContentDescriptionManager.getDescriptionFor(ContentDescriptionManager.java:364)
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:266)
+	at org.eclipse.ui.internal.ide.model.WorkbenchResource.testContentTypeProperty(WorkbenchResource.java:151)
+	at org.eclipse.ui.internal.ide.model.WorkbenchResource.testAttribute(WorkbenchResource.java:118)
+	at org.eclipse.ui.internal.ActionExpression$ObjectStateExpression.preciselyMatches(ActionExpression.java:486)
+	at org.eclipse.ui.internal.ActionExpression$ObjectStateExpression.isEnabledFor(ActionExpression.java:455)
+	at org.eclipse.ui.internal.ActionExpression$AndExpression.isEnabledFor(ActionExpression.java:126)
+	at org.eclipse.ui.internal.ActionExpression$SingleExpression.isEnabledFor(ActionExpression.java:678)
+	at org.eclipse.ui.internal.ActionExpression.isEnabledFor(ActionExpression.java:971)
+	at org.eclipse.ui.internal.decorators.DecoratorDefinition.isEnabledFor(DecoratorDefinition.java:299)
+	at org.eclipse.ui.internal.decorators.DecoratorManager.getDecoratorsFor(DecoratorManager.java:301)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecoratorsFor(LightweightDecoratorManager.java:325)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:344)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.internal.content.LowLevelIOException
+	at org.eclipse.core.internal.content.LazyInputStream.ensureAvailable(LazyInputStream.java:70)
+	at org.eclipse.core.internal.content.LazyInputStream.read(LazyInputStream.java:127)
+	at zipeditor.model.ZipModel.detectType(ZipModel.java:94)
+	... 24 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-09 13:38:17.914
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:167)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:133)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.lsp4e 4 0 2019-11-09 20:48:52.716
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.eclipse.lsp4e.operations.hover.LSPTextHover.getHoverInfo(LSPTextHover.java:108)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.hover.GenericTextHover.lambda$4(GenericTextHover.java:90)
+	at java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.hover.GenericTextHover.getHoverInfo(GenericTextHover.java:90)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.hover.AbstractJavaEditorTextHover.getHoverInfo2(AbstractJavaEditorTextHover.java:99)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.hover.GenericTextHover.getHoverInfo2(GenericTextHover.java:112)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:149)
+	at org.eclipse.wst.jsdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:81)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)

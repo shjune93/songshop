@@ -34,10 +34,10 @@ public class CategoryBoard extends AbstractEntity implements Comparable<Category
 	
 	
 	
-	@OneToMany(mappedBy="freeboard")
+	@OneToMany(mappedBy="categoryboard")
 	@OrderBy("id DESC")
 	@JsonManagedReference
-	private List<FreeBoardAnswer> answers;
+	private List<CategoryBoardAnswer> answers;
 	
 	
 	public CategoryBoard() {}

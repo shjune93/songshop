@@ -20,14 +20,16 @@ function addAnswer(e){
 			data:queryString,
 			dataType:'json', 
 			success:onSuccess,
+			//error:onError
 			error:function(request,status,error){
-				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				//alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				alert("로그인 후 이용하실 수 있습니다");
 			   }
 			});
 }
 
 function onError(){
-	
+	alert('로그인 하셔야 합니다.');
 }
 
 

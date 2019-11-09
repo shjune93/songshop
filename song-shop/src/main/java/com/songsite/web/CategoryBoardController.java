@@ -233,7 +233,7 @@ public class CategoryBoardController {
 
 
 		categoryBoardRepository.deleteById(id);
-		return "redirect:/categoryboard/categorylist";
+		return "redirect:/categoryboard/list/1";
 	}
 
 

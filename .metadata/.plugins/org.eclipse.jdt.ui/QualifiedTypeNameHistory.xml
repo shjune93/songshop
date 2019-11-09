@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="antlr.collections.List"/>
-<fullyQualifiedTypeName name="ch.qos.logback.classic.Logger"/>
-<fullyQualifiedTypeName name="org.apache.tomcat.util.file.ConfigurationSource.Resource"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="com.songsite.fileservice.FileUploadDownloadService"/>
 <fullyQualifiedTypeName name="com.songsite.domain.FreeBoardFile"/>
@@ -36,9 +33,7 @@
 <fullyQualifiedTypeName name="com.songsite.repository.FreeBoardAnswerRepository"/>
 <fullyQualifiedTypeName name="com.songsite.domain.FreeBoardAnswer"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
-<fullyQualifiedTypeName name="lombok.Getter"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
-<fullyQualifiedTypeName name="lombok.Setter"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonBackReference"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
@@ -51,7 +46,6 @@
 <fullyQualifiedTypeName name="org.springframework.data.annotation.CreatedDate"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.songsite.pasing.PageNum"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
 <fullyQualifiedTypeName name="org.springframework.data.jpa.domain.Specification"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="com.songsite.domain.AbstractEntity"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="com.songsite.domain.CategoryBoard"/>
+<fullyQualifiedTypeName name="lombok.Getter"/>
+<fullyQualifiedTypeName name="lombok.Setter"/>
 </qualifiedTypeNameHistroy>

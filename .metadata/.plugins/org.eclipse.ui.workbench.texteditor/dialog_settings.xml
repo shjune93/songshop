@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="va"/>
+		<item key="selection" value="updateform"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="Va"/>
-			<item value="show"/>
-			<item value="searchl"/>
-			<item value="search"/>
-			<item value="request"/>
-			<item value="session"/>
-			<item value="title"/>
-			<item value="srch-term"/>
-			<item value="btn btn-default btn-primary"/>
-			<item value="findByUserId"/>
-			<item value="textarea.form-control"/>
-			<item value="textarea"/>
-			<item value="form-control"/>
-			<item value=".content-main"/>
-			<item value=".qna-header"/>
+			<item value="updateform"/>
+			<item value="update"/>
+			<item value="수정"/>
+			<item value="categoryboard"/>
+			<item value="B"/>
+			<item value="label"/>
+			<item value="la"/>
+			<item value="lavel"/>
+			<item value="file"/>
+			<item value="freeboard"/>
+			<item value="create"/>
+			<item value="categoryboardform"/>
+			<item value="list"/>
+			<item value="blog추천사이트"/>
+			<item value="blog"/>
 		</list>
 		<list key="replacehistory">
+			<item value="categoryboard"/>
+			<item value="categoryBoard"/>
+			<item value="CategoryBoard"/>
 			<item value="slide-image"/>
 			<item value="int"/>
 			<item value="freeBoard"/>
@@ -38,10 +41,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="-283"/>
-		<item key="DIALOG_Y_ORIGIN" value="426"/>
+		<item key="DIALOG_X_ORIGIN" value="8"/>
+		<item key="DIALOG_Y_ORIGIN" value="427"/>
 		<item key="DIALOG_WIDTH" value="288"/>
-		<item key="DIALOG_HEIGHT" value="245"/>
+		<item key="DIALOG_HEIGHT" value="244"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

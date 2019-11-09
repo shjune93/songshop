@@ -25,7 +25,7 @@ import lombok.ToString;
 @Setter
 public class CategoryBoardAnswer extends AbstractEntity{
 	@ManyToOne
-	@JoinColumn(foreignKey=@ForeignKey(name="fk_answer_writer"))
+	@JoinColumn(foreignKey=@ForeignKey(name="fk_answer_category_writer"))
 	private User writer;
 	
 	@ManyToOne
