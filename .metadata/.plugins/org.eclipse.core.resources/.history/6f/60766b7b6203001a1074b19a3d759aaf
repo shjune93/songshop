@@ -221,17 +221,14 @@ public class CategoryBoardController {
 	}
 
 	//게시판 삭제
-	@PostMapping("{listNum}/{id}/delete")
-	public String delete(HttpSession session
-			,@PathVariable Long id
-			,@PathVariable int listNum
-			,Model model){
+	@PostMapping("{id}/delete")
+	public String delete(HttpSession session,HttpServletRequest request,@PathVariable Long id,Model model){
 
 		CategoryBoard CategoryBoard=categoryBoardRepository.findById(id).get();
 		Result result=valid(session,CategoryBoard);
 		if(!result.isValid()) {
 			model.addAttribute("errorMessage",result.getErrorMessage());
-			return "redirect:/categoryboard/"+listNum+"/"+id;
+			return "redirect:/categoryboard/"+id;
 		}
 
 

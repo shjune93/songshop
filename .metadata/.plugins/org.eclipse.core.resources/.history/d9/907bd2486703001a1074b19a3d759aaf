@@ -37,7 +37,7 @@
 		<div class="navbar-header"></div>
 		<div class="collapse navbar-collapse" id="navbar-collapse2">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/" role="button">Home</a></li>
+				<li class="active"><a href="/">Posts</a></li>
 				<li><a href="/users/loginForm" role="button">프로젝트</a></li>
 				<li><a href="/categoryboard/list/1" role="button">추천사이트</a></li>
 				<li><a href="/freeboard/list/1" role="button">자유게시판</a></li>
@@ -113,7 +113,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapse2">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/" role="button">Home</a></li>
+				<li class="active"><a href="/">Posts</a></li>
 				<li><a href="/users/loginForm" role="button">프로젝트</a></li>
 				<li><a href="/categoryboard/list/1" role="button">추천사이트</a></li>
 				<li><a href="/freeboard/list/1" role="button">자유게시판</a></li>

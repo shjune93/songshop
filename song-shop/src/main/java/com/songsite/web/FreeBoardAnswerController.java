@@ -48,9 +48,12 @@ public class FreeBoardAnswerController {
 	}
 	
 	@PostMapping("{id}/delete")
-	public Result delete(@PathVariable Long freeBoardId,@PathVariable Long id,HttpSession session) {
+	public Result delete(
+			@PathVariable Long freeBoardId,
+			@PathVariable Long id,
+			HttpSession session) {
 		if(!HttpSessionUtils.isLoginUser(session)) {
-			return Result.fail("로그인히야 합니다.");
+			return Result.fail("로그인하셔야 합니다.");
 		}
 		FreeBoardAnswer answer=freeBoardAnswerRepository.findById(id).get();
 		User loginUser=HttpSessionUtils.getUserSession(session);
